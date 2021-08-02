@@ -24,11 +24,3 @@ export function createRouter() {
         ],
     })
 }
-
-
-// router.beforeEach((to, from, next) => {
-//     document.title = to.meta.title || 'Your Website Title';
-//     next();
-// });
-//
-// export default router;
