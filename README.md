@@ -5,3 +5,6 @@ npm install
 
 npm run dev
 
+### To Do
+
+- [ ] Add Vuex
