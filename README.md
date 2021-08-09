@@ -3,7 +3,7 @@ Server-Side Rendering (SSR) example for Vue3 (Vue Router, Vuex) with Vite
 
 npm install
 
-npm run dev
+node server
 
 ### To Do
 
