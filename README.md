@@ -1,5 +1,5 @@
 # vue3-vite-ssr-example
-Server-Side Rendering (SSR) example for Vue3 with Vite
+Server-Side Rendering (SSR) example for Vue3 (Veu Router, Vuex) with Vite
 
 npm install
 
