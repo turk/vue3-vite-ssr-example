@@ -38,7 +38,6 @@ export default {
 
         async FETCH_POKEMON({commit}, id) {
             const res = await PokemonService.fetchPokemon(id);
-            console.log(res.name)
             await commit('SET_STATE', {
                 pokemon: {
                     name: res.name,

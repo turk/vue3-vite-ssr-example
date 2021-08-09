@@ -12,7 +12,6 @@ import {useStore} from "vuex";
 
 export default defineComponent({
   serverPrefetch() {
-    console.log(this.$route.params.id)
     return this.$store.dispatch('pokemon/FETCH_POKEMON', this.$route.params.id);
   },
   setup() {
