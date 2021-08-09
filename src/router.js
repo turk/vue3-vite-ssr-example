@@ -10,11 +10,13 @@ export function createRouter() {
         routes: [
             {
                 path: '/',
-                component: () => import('@/pages/Home.vue'),
+                name: 'home',
+                component: () => import('/src/pages/Home.vue'),
             },
             {
-                path: '/post',
-                component: () => import('@/pages/Post.vue'),
+                path: '/pokemon/:id',
+                name: 'pokemonDetail',
+                component: () => import('/src/pages/Pokemon.vue'),
             },
             // Redirect to 404
             {
