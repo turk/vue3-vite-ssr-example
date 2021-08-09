@@ -1,8 +1,14 @@
-import {createApp} from './main'
+import { createApp } from './main'
+import {sync} from "vuex-router-sync";
 
-const {app, router} = createApp()
+// eslint-disable-next-line no-unused-vars
+const { app, router, head, store } = createApp()
+sync(store, router);
 
-// wait until router is ready before mounting to ensure hydration match
+if (window.__INITIAL_STATE__) {
+    store.replaceState(window.__INITIAL_STATE__);
+}
+
 router.isReady().then(() => {
-    app.mount('#app')
+    app.mount('#app', true)
 })

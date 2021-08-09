@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const express = require('express')
-
+const serialize = require('serialize-javascript')
 const isTest = process.env.NODE_ENV === 'test' || !!process.env.VITE_TEST_BUILD
 
 async function createServer(
@@ -60,12 +60,13 @@ async function createServer(
                 render = require('./dist/server/entry-server.js').render
             }
 
-            const [appHtml, preloadLinks, headTags] = await render(url, manifest)
+            const [appHtml, preloadLinks, headTags, store] = await render(url, manifest)
 
             const html = template
                 .replace(`<!--preload-links-->`, preloadLinks)
                 .replace(`<!--app-html-->`, appHtml)
                 .replace(`<!--head-tags-->`, headTags)
+                .replace(`'<vuex-state>'`, serialize(store.state))
 
             res.status(200).set({'Content-Type': 'text/html'}).end(html)
         } catch (e) {
