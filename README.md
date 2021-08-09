@@ -7,4 +7,4 @@ npm run dev
 
 ### To Do
 
-- [ ] Add Vuex
+- [-] Add Vuex
